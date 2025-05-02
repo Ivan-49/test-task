@@ -1,21 +1,20 @@
-
-
 import pytest
 import math
 from src.circle import Circle
 
 # Фиксированные тест-кейсы
 valid_circles = [
-    (1, math.pi),       # Базовый случай
-    (2, 4 * math.pi),   # Удвоенный радиус
+    (1, math.pi),  # Базовый случай
+    (2, 4 * math.pi),  # Удвоенный радиус
     (0.5, 0.25 * math.pi),  # Дробный радиус
 ]
 
 invalid_circles = [
-    (0, ValueError),    # Нулевой радиус
-    (-1, ValueError),   # Отрицательный радиус
+    (0, ValueError),  # Нулевой радиус
+    (-1, ValueError),  # Отрицательный радиус
     (-0.001, ValueError),  # Микроотрицательное значение
 ]
+
 
 class TestCircle:
     @pytest.mark.parametrize("radius, expected_area", valid_circles)

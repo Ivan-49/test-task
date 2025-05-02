@@ -1,13 +1,14 @@
 from src.shape import Shape
 import math
 
+
 class Triangle(Shape):
     def __init__(self, a: float, b: float, c: float):
         if min(a, b, c) <= 0:
             raise ValueError("Стороны должны быть положительными числами")
         if not self._is_valid(a, b, c):
             raise ValueError("Треугольник с такими сторонами не существует")
-        
+
         self.a = a
         self.b = b
         self.c = c
